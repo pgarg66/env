@@ -1,0 +1,30 @@
+[user]
+	email = pankaj@solana.com
+	name = Pankaj Garg
+
+[color]
+        ui = auto
+
+[alias]
+        lol = log --oneline --decorate --graph
+        lolm = log --oneline --decorate --graph --no-merges
+        lola = log --oneline --decorate --graph --all
+        lolam = log --oneline --decorate --graph --all --no-merges
+        ls = ls-tree master --name-only
+        lsr = ls-tree -r master --name-only
+        resync = ! current=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull --ff-only upstream master:master && git push origin master && git fetch -fp origin && git checkout "$current"
+        fetch-pr = fetch upstream pull/"$1"/head
+
+[core]
+        excludesfile = ~/.gitexcludes
+        deltaBaseCacheLimit = 1G
+
+[push]
+	default = simple
+[merge]
+	renamelimit = 10000
+
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg2
