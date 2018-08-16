@@ -13,7 +13,7 @@
         ls = ls-tree master --name-only
         lsr = ls-tree -r master --name-only
         resync = ! current=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull --ff-only upstream master:master && git push origin master && git fetch -fp origin && git checkout "$current"
-        fetch-pr = fetch upstream pull/"$1"/head
+        pull-pr = !sh -c 'git pull upstream pull/"$1"/head' -
 
 [core]
         excludesfile = ~/.gitexcludes
