@@ -1,5 +1,7 @@
-export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-export PS1=" \w @ \h (\u) \n => "
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=true
+export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\n\$ "'
 export PS2=" => "
 
 source $HOME/.cargo/env
