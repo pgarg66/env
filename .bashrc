@@ -119,3 +119,6 @@ fi
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
     . /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
+
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa

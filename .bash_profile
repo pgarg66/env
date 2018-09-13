@@ -4,8 +4,6 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\n\$ "'
 export PS2=" => "
 
-source $HOME/.cargo/env
-
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -31,3 +29,17 @@ spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
+
+pathmunge () {
+   if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+      if [ "$2" = "after" ] ; then
+         PATH=$PATH:$1
+      else
+         PATH=$1:$PATH
+      fi
+      export PATH
+   fi
+}
+
+pathmunge "~/.cargo/bin"
+pathmunge "~/workspace/bin" after
