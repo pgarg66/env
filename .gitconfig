@@ -25,6 +25,6 @@
 	renamelimit = 10000
 
 [commit]
-	gpgSign = true
+	gpgSign = false
 [gpg]
 	program = gpg2

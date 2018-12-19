@@ -43,3 +43,5 @@ pathmunge () {
 
 pathmunge "~/.cargo/bin"
 pathmunge "~/workspace/bin" after
+
+export PATH="$HOME/.cargo/bin:$PATH"
